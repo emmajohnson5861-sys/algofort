@@ -1,0 +1,37 @@
+"use client";
+
+import React from "react";
+
+interface SectionSubtitleProps {
+  text: string;
+  isDark?: boolean;
+  className?: string;
+}
+
+export default function SectionSubtitle({
+  text,
+  isDark = true,
+  className = "",
+}: SectionSubtitleProps) {
+  return (
+    <div
+      className={`algo-section-subtitle ${isDark ? "dark-theme" : "light-theme"} ${className}`}
+      style={{ width: "fit-content" }}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="15"
+        height="16"
+        viewBox="0 0 78 83"
+        fill="none"
+        className="algo-subtitle-star-icon"
+      >
+        <path
+          d="M32.7 31.8V5.4H44.3V31.8H32.7ZM26.9 41.8L4.1 28.6L9.9 18.6L32.6 31.8L26.9 41.8ZM49.9 41.8L44.3 31.9L67.1 18.6L72.9 28.6L49.9 41.8ZM67.1 65L44.1 51.8L49.9 41.9L72.9 55L67.1 65ZM9.9 65L4.1 55L26.9 41.9L32.7 51.8L9.9 65ZM32.7 78.2V51.9H44.1V78.2H32.7Z"
+          fill="#f47a1f"
+        />
+      </svg>
+      <span className="algo-subtitle-text">{text}</span>
+    </div>
+  );
+}

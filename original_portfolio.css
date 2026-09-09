@@ -1,0 +1,592 @@
+/* ==========================================================================
+   1. FONTS & ROOT DESIGN TOKENS
+   ========================================================================== */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300 800;
+    font-display: swap;
+    src: url("/fonts/c875c6f5d3e977ac-s.p.80fc2c9e.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: 'Saira Condensed';
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url("/fonts/b08b9c4f9a4ffc6e-s.p.246f0804.woff2") format("woff2");
+}
+
+:root {
+    --font-primary: "Saira Condensed", sans-serif;
+    --font-secondary: "Poppins", sans-serif;
+    --bg-primary: #0f0f0f;
+    --bg-primary-inverse: #f1f1f1;
+    --bg-secondary: #030303;
+    --text-primary: #e7e7e7;
+    --text-primary-inverse: #121212;
+    --color-primary: #e7e7e7;
+    --color-primary-fixed: #e7e7e7;
+    --border: #232323;
+    --rad: 36px;
+    --duration: 0.3s;
+}
+
+/* ==========================================================================
+   2. BASE RESETS (SCOPED TO #PORTFOLIO)
+   ========================================================================== */
+#portfolio *,
+#portfolio *::before,
+#portfolio *::after {
+    box-sizing: border-box;
+    border: 0 solid;
+}
+
+#portfolio {
+    font-family: var(--font-secondary);
+    background-color: var(--bg-secondary);
+    color: #ffffff;
+}
+
+#portfolio img,
+#portfolio svg {
+    display: block;
+}
+
+#portfolio img {
+    user-select: none;
+    pointer-events: none;
+    max-width: 100%;
+}
+
+#portfolio button {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-family: var(--font-primary);
+    cursor: pointer;
+}
+
+#portfolio h1,
+#portfolio h2,
+#portfolio h3,
+#portfolio h4 {
+    text-transform: uppercase;
+    font-family: var(--font-primary);
+    color: var(--text-primary);
+}
+
+#portfolio p {
+    line-height: 1.6;
+    font-family: var(--font-secondary);
+}
+
+#portfolio .about-title {
+    font-family: var(--_font-family---heading-font, 'Clash Display', sans-serif);
+    color: var(--white-shade--white, #ffffff);
+    font-size: var(--_typography---heading-size--h6, 24px);
+    line-height: var(--_typography---line-height--l, 31.68px);
+    font-weight: var(--_typography---font-weight--semi-bold, 600);
+    text-transform: uppercase;
+}
+
+#portfolio .medium-content-text {
+    font-family: var(--_font-family---heading-font, 'Clash Display', sans-serif);
+    color: var(--white-shade--white, #ffffff);
+    font-size: var(--_typography---heading-size--h4, 36px);
+    line-height: var(--_typography---line-height--xl, 50.4px);
+    font-weight: var(--_typography---font-weight--semi-bold, 600);
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 991px) {
+    #portfolio .medium-content-text {
+        font-size: 28px;
+        line-height: 38px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #portfolio .medium-content-text {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+/* ==========================================================================
+   3. SECTION & STRUCTURAL LAYOUT
+   ========================================================================== */
+section#portfolio {
+    position: relative;
+    z-index: 20;
+    background-color: var(--bg-secondary);
+    min-height: 100vh;
+}
+
+.mx-auto {
+    margin-inline: auto;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.w-fit {
+    width: fit-content;
+}
+
+.size-full {
+    width: 100%;
+    height: 100%;
+}
+
+.size-\[34px\] {
+    width: 34px;
+    height: 34px;
+}
+
+.max-w-screen-2xl {
+    max-width: 96rem;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.sticky {
+    position: sticky;
+}
+
+.top-0 {
+    top: 0;
+}
+
+.left-0 {
+    left: 0;
+}
+
+.-top-\[100vh\] {
+    top: -100vh;
+}
+
+.h-screen {
+    height: 100vh;
+}
+
+.h-\[300vh\] {
+    height: 300vh;
+}
+
+.overflow-clip {
+    overflow: clip;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Paddings & Spacing */
+.px-2 {
+    padding-inline: 0.5rem;
+}
+
+.px-4 {
+    padding-inline: 1rem;
+}
+
+.px-6 {
+    padding-inline: 1.5rem;
+}
+
+.px-16 {
+    padding-inline: 4rem;
+}
+
+.py-1 {
+    padding-block: 0.25rem;
+}
+
+.py-3 {
+.py-3 {
+    padding-block: 0.75rem;
+}
+
+.pb-16 {
+    padding-bottom: 4rem;
+}
+
+.pb-48 {
+    padding-bottom: 12rem;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.gap-8 {
+    gap: 2rem;
+}
+
+/* Divider */
+.border-1 {
+    border-width: 1px;
+}
+
+.border-\(--text-primary\) {
+    border-color: var(--text-primary);
+}
+
+.scale-x-0 {
+    transform: scaleX(0);
+}
+
+/* ==========================================================================
+   4. TYPOGRAPHY & TEXT STYLES
+   ========================================================================== */
+.font-light {
+    font-weight: 300;
+}
+
+.font-normal {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.text-nowrap {
+    text-wrap: nowrap;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-end {
+    text-align: end;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
+
+.text-primary {
+    color: var(--text-primary);
+}
+
+.font-secondary {
+    font-family: var(--font-secondary) !important;
+}
+
+.text-\(--color-primary\) {
+    color: var(--color-primary);
+}
+
+.text-\(--color-primary-fixed\),
+.text-\(--color-primary-fixed\)\! {
+    color: var(--color-primary-fixed) !important;
+}
+
+.text-\[clamp\(50px\,10vw\,10vw\)\] {
+    font-size: clamp(50px, 10vw, 10vw);
+}
+
+.leading-\[clamp\(50px\,8vw\,8vw\)\] {
+    line-height: clamp(50px, 8vw, 8vw);
+}
+
+.fill-text {
+    color: var(--text-primary);
+    -webkit-text-fill-color: #ffffff13;
+    will-change: background-size;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline;
+    position: relative;
+}
+
+/* ==========================================================================
+   5. BUTTONS, CARDS & INTERACTION
+   ========================================================================== */
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.border-2 {
+    border-width: 2px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.duration {
+    transition-duration: var(--duration);
+}
+
+.rad {
+    border-radius: var(--rad);
+}
+
+.aspect-16\/12 {
+    aspect-ratio: 16 / 12;
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+.scale-\[1\.08\] {
+    transform: scale(1.12);
+}
+
+.bg-black\/25 {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.blur-\[1px\] {
+    filter: blur(1px);
+}
+
+.border-\(--color-primary-fixed\) {
+    border-color: var(--color-primary-fixed);
+}
+
+.border {
+    border-width: 1px;
+}
+
+/* Button Text Flip Effect */
+.-translate-y-full {
+    transform: translateY(-100%);
+}
+
+.translate-y-0 {
+    transform: translateY(0);
+}
+
+.translate-y-full {
+    transform: translateY(100%);
+}
+
+.group:hover .group-hover\:translate-y-0 {
+    transform: translateY(0);
+}
+
+.group:hover .group-hover\:translate-y-full {
+    transform: translateY(100%);
+}
+
+.group:hover {
+    background-color: var(--bg-primary-inverse);
+    border-color: var(--bg-primary-inverse);
+    color: var(--text-primary-inverse);
+}
+
+/* Button SVG Arrow Motion */
+button .button-arrow-up-right {
+    transition: transform var(--duration) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover .button-arrow-up-right:first-child {
+    transform: translate(1.75rem, -1.75rem);
+}
+
+button .button-arrow-up-right:last-child {
+    transform: translate(-1.75rem, 1.75rem);
+}
+
+button:hover .button-arrow-up-right:last-child {
+    transform: translate(0, 0);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE BREAKPOINTS (ONLY ACTIVE IN HTML)
+   ========================================================================== */
+@media (max-width: 767px) {
+    .max-md\:hidden\! {
+        display: none !important;
+    }
+
+    .max-md\:flex-col {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 768px) {
+    .md\:hidden\! {
+        display: none !important;
+    }
+
+    .md\:space-y-8> :not([hidden])~ :not([hidden]) {
+        margin-top: 2rem;
+    }
+
+    .md\:px-8 {
+        padding-inline: 2rem;
+    }
+
+    .md\:w-1\/2 {
+        width: 50%;
+    }
+
+    .md\:text-3xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+
+    .md\:text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+    }
+
+    .md\:text-5xl {
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
+
+@media (max-width: 1023px) {
+    .max-lg\:justify-center {
+        justify-content: center;
+    }
+
+    .max-lg\:text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+}
+
+@media (min-width: 640px) {
+    .sm\:text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .sm\:text-3xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+
+    .sm\:w-3\/4 {
+        width: 75%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg\:px-16 {
+        padding-inline: 4rem;
+    }
+
+    .lg\:text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+    }
+
+    .lg\:text-5xl {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    .lg\:text-7xl {
+        font-size: 4.5rem;
+        line-height: 1;
+    }
+
+    .lg\:tracking-\[-2px\] {
+        letter-spacing: -2px;
+    }
+
+    .lg\:w-125 {
+        width: 31.25rem;
+    }
+
+    .lg\:gap-4 {
+        gap: 1rem;
+    }
+
+    .lg\:px-4 {
+        padding-inline: 1rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .xl\:text-\[4rem\] {
+        font-size: 4rem;
+        line-height: 1;
+    }
+}
+
+@media (min-width: 1536px) {
+    .\32xl\:px-24 {
+        padding-inline: 6rem;
+    }
+}

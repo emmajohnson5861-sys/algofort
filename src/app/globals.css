@@ -1,0 +1,37 @@
+@import "./algofort.css";
+@import "./portfolio.css";
+@import "./blog.css";
+
+.hero-big-text {
+  font-size: 14rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .hero-big-text {
+    font-size: 12rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hero-big-text {
+    font-size: 9.5rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .hero-big-text {
+    font-size: 7rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero-big-text {
+    font-size: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .hero-big-text {
+    font-size: 3rem;
+  }
+}

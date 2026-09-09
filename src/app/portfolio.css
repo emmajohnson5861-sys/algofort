@@ -1,0 +1,296 @@
+/* ==========================================================================
+   ALGOFORT DIGITAL OUTREACH / PORTFOLIO SECTION STYLES
+   PURE CUSTOM CSS (NO TAILWIND UTILITIES, USING CLASH DISPLAY & NOTO SANS)
+   ========================================================================== */
+
+#portfolio {
+    font-family: var(--_font-family---secondary-font, 'Noto Sans', sans-serif);
+    background-color: #0d0d0d !important;
+    color: #ffffff;
+    width: 100%;
+    position: relative;
+    z-index: 20;
+    overflow: visible !important;
+}
+
+#portfolio *,
+#portfolio *::before,
+#portfolio *::after {
+    box-sizing: border-box;
+}
+
+/* 1. Header & Container */
+.algo-portfolio__container {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 15px;
+    padding-top: 90px;
+    padding-bottom: 40px;
+}
+
+.algo-portfolio__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+    margin-bottom: 60px;
+}
+
+.algo-portfolio__badge-col {
+    width: fit-content !important;
+    max-width: none !important;
+    flex-shrink: 0;
+    overflow: visible !important;
+}
+
+.algo-portfolio__desc-col {
+    max-width: 860px;
+    width: 100%;
+}
+
+.algo-portfolio__desc {
+    font-family: var(--_font-family---heading-font, 'Clash Display', sans-serif);
+    color: var(--white-shade--white, #ffffff);
+    font-size: var(--_typography---heading-size--h4, 36px);
+    line-height: var(--_typography---line-height--xl, 140%);
+    font-weight: var(--_typography---font-weight--semi-bold, 600);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+@media screen and (max-width: 991px) {
+    .algo-portfolio__header {
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+
+    .algo-portfolio__desc {
+        font-size: 28px;
+        line-height: 135%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .algo-portfolio__desc {
+        font-size: 22px;
+        line-height: 135%;
+    }
+}
+
+/* 2. Slide Stacking Architecture */
+.algo-portfolio__track {
+    width: 100%;
+    position: relative;
+}
+
+.algo-portfolio-frame {
+    position: relative;
+    height: 100vh;
+    overflow: clip;
+    width: 100%;
+}
+
+.algo-portfolio-frame__spacer {
+    position: relative;
+    height: 300vh;
+    top: -100vh;
+    width: 100%;
+}
+
+.algo-portfolio-frame__sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 3. Parallax Image & Overlay */
+.algo-portfolio-frame__bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.12);
+    display: block;
+    user-select: none;
+    pointer-events: none;
+}
+
+.algo-portfolio-frame__overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    z-index: 1;
+}
+
+/* 4. Center Card Content */
+.algo-portfolio-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.algo-portfolio-card__inner {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Dual Side Numbers */
+.algo-portfolio-card__numbers-row {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-inline: 4rem;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.algo-portfolio-card__num {
+    font-family: var(--_font-family---heading-font, 'Clash Display', sans-serif);
+    font-weight: 300;
+    font-size: 6rem;
+    color: #e7e7e7;
+    letter-spacing: 0.05em;
+    user-select: none;
+}
+
+@media (max-width: 767px) {
+    .algo-portfolio-card__numbers-row {
+        padding-inline: 1.5rem;
+    }
+
+    .algo-portfolio-card__num {
+        font-size: 1.5rem;
+    }
+}
+
+/* Main Project Title - 72px Clash Display */
+.algo-portfolio-card__title {
+    font-family: var(--_font-family---heading-font, 'Clash Display', sans-serif) !important;
+    font-size: 72px !important;
+    font-weight: 500 !important;
+    line-height: 1.1 !important;
+    text-align: center;
+    color: #ffffff !important;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 0;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 10;
+}
+
+@media (max-width: 1023px) {
+    .algo-portfolio-card__title {
+        font-size: 48px !important;
+        white-space: normal;
+        padding-inline: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .algo-portfolio-card__title {
+        font-size: 32px !important;
+        line-height: 1.2 !important;
+    }
+}
+
+/* Thumbnail Card */
+.algo-portfolio-card__thumb-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 16 / 12;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.algo-portfolio-card__thumb {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 1023px) {
+    .algo-portfolio-card__thumb-wrap {
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 767px) {
+    .algo-portfolio-card__thumb-wrap {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .algo-portfolio-card__thumb-wrap {
+        max-width: 280px;
+    }
+}
+
+/* Tag Badges */
+.algo-portfolio-card__tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.algo-portfolio-card__tag {
+    font-family: var(--_font-family---secondary-font, 'Noto Sans', sans-serif);
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 400;
+    padding: 0.35rem 1.25rem;
+    border: 1px solid rgba(231, 231, 231, 0.7);
+    border-radius: 36px;
+    color: #e7e7e7;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    letter-spacing: 0.02em;
+    user-select: none;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+
+
+@media (max-width: 1023px) {
+    .algo-portfolio-card__tags {
+        gap: 0.5rem;
+    }
+
+    .algo-portfolio-card__tag {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.9rem;
+    }
+}
