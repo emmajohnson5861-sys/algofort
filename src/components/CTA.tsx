@@ -93,34 +93,6 @@ export default function CTA() {
           },
         });
       }
-
-      // 3. Button hover roll-up & star rotate
-      const buttons = container.querySelectorAll<HTMLElement>(".main-button");
-      buttons.forEach((btn) => {
-        const texts = btn.querySelectorAll<HTMLElement>(".button-text");
-        const icon = btn.querySelector<HTMLElement>(".button-icon");
-
-        const onMouseEnter = () => {
-          if (texts.length >= 2) {
-            gsap.to(texts, { yPercent: -100, duration: 0.35, ease: "power2.out" });
-          }
-          if (icon) {
-            gsap.to(icon, { rotate: 45, duration: 0.35, ease: "power2.out" });
-          }
-        };
-
-        const onMouseLeave = () => {
-          if (texts.length) {
-            gsap.to(texts, { yPercent: 0, duration: 0.35, ease: "power2.out" });
-          }
-          if (icon) {
-            gsap.to(icon, { rotate: 0, duration: 0.35, ease: "power2.out" });
-          }
-        };
-
-        btn.addEventListener("mouseenter", onMouseEnter);
-        btn.addEventListener("mouseleave", onMouseLeave);
-      });
     }, container);
 
     return () => ctx.revert();
@@ -216,11 +188,11 @@ export default function CTA() {
                 <div>
                   <a
                     href="tel:+12135555555"
-                    className="main-button alternate-button w-inline-block"
+                    className="main-button w-inline-block"
                   >
                     <div className="main-button-block">
-                      <div className="button-text alternate-text">+1 (213) 555-5555</div>
-                      <div className="button-text alternate-text">+1 (213) 555-5555</div>
+                      <div className="button-text">+1 (213) 555-5555</div>
+                      <div className="button-text">+1 (213) 555-5555</div>
                     </div>
                     <svg
                       className="button-icon"
@@ -356,7 +328,7 @@ export default function CTA() {
                         {/* Row 5: Submit Button */}
                         <button
                           type="submit"
-                          className="main-button alternate-button w-inline-block"
+                          className="main-button w-inline-block"
                           style={{
                             border: "none",
                             cursor: "pointer",
@@ -365,8 +337,8 @@ export default function CTA() {
                           }}
                         >
                           <div className="main-button-block">
-                            <div className="button-text alternate-text">Submit Request</div>
-                            <div className="button-text alternate-text">Submit Request</div>
+                            <div className="button-text">Submit Request</div>
+                            <div className="button-text">Submit Request</div>
                           </div>
                           <svg
                             className="button-icon"

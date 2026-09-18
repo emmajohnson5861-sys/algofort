@@ -87,9 +87,12 @@ export default function Footer() {
           {/* Logo Above Footer Grid */}
           <div className="footer-top-brand">
             <a href="/" className="footer-brand-link" aria-label="Algofort Home">
-              <span className="footer-brand-title">
-                ALGOFORT<sup>®</sup>
-              </span>
+              <img
+                src="/images/logo-black-01.png"
+                alt="Algofort Logo"
+                className="footer-brand-logo"
+                loading="lazy"
+              />
             </a>
           </div>
 

@@ -6295,7 +6295,7 @@ a {
 }
 
 .main-button:hover .button-icon {
-    transform: rotate(45deg);
+    transform: rotate(90deg) !important;
 }
 
 /* Component Grid: Video wrap (left) + Testimonial slider (right bleed) */

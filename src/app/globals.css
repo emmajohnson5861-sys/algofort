@@ -3,6 +3,171 @@
 @import "./blog.css";
 @import "./cta.css";
 @import "./footer.css";
+@import "./navbar.css";
+
+/* ==========================================================================
+   MOBILE SECTION SPACING: STRICT 80PX GAP (NO MORE THAN 80PX)
+   Each section has 40px top + 40px bottom = exactly 80px gap between sections!
+   ========================================================================== */
+@media screen and (max-width: 767px) {
+  /* Hero Section: Generous bottom space so it never looks attached at the bottom */
+  .section-banner,
+  .section-banner.fixed {
+    position: relative !important;
+    z-index: 2 !important;
+    height: auto !important;
+    min-height: 90vh !important;
+    padding-bottom: 40px !important;
+    margin-bottom: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .fixed-banner {
+    position: relative !important;
+    top: auto !important;
+    height: 100% !important;
+    min-height: 90vh !important;
+    overflow: hidden !important;
+  }
+
+  /* CRITICAL: Video is ABSOLUTE on mobile, NEVER fixed over subsequent sections */
+  .hero-slider-v1,
+  .hero-video-bg-wrap {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+  }
+
+  .hero-bg-video {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .banner-info {
+    position: relative !important;
+    z-index: 2 !important;
+    inset: auto !important;
+    min-height: calc(90vh - 40px) !important;
+    justify-content: space-between !important;
+    padding-top: 100px !important;
+    padding-bottom: 80px !important; /* Generous breathing room beneath algofort® */
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .hero-content-wrapper {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: calc(90vh - 180px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-bottom-content {
+    margin-top: 36px !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 30px !important; /* Ample lift above banner bottom */
+  }
+
+  .hero-big-text-wrapper {
+    padding-bottom: 10px !important;
+  }
+
+  /* All Subsequent Sections: 40px top + 40px bottom = exact 80px total gap */
+  .section,
+  .section.about,
+  .section.work,
+  .section.service,
+  .section.why-us,
+  .section-home-service,
+  #portfolio,
+  .algo-portfolio,
+  .section-home-testimonial,
+  .algo-blog-section,
+  .section_cta,
+  .site-section.sec-cta {
+    position: relative !important;
+    z-index: 10 !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Footer Section top padding to match 80px gap from CTA */
+  .footer-section {
+    position: relative !important;
+    z-index: 10 !important;
+    padding-top: 40px !important;
+    margin-top: 0 !important;
+  }
+
+  /* Zero out internal nested padding wrappers so they don't exceed 80px */
+  .padding-section-large,
+  .padding-section-medium,
+  .padding-section-small,
+  .algo-portfolio__container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Prevent sticky jumping on mobile */
+  .work-process-sticky {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  .service-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .service-content {
+    position: relative !important;
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .section-banner,
+  .section-banner.fixed {
+    min-height: 90vh !important;
+    padding-bottom: 40px !important;
+  }
+
+  .fixed-banner {
+    min-height: 90vh !important;
+  }
+
+  .banner-info {
+    min-height: calc(90vh - 40px) !important;
+    padding-top: 90px !important;
+    padding-bottom: 70px !important;
+  }
+
+  .hero-content-wrapper {
+    min-height: calc(90vh - 160px) !important;
+  }
+
+  .hero-bottom-content {
+    margin-top: 28px !important;
+    padding-bottom: 24px !important;
+  }
+}
 
 .hero-big-text {
   font-size: 14.7rem;
@@ -37,3 +202,17 @@
     font-size: 3rem;
   }
 }
+
+/* ==========================================================================
+   GLOBAL BUTTONS: ALL RIGHT ICONS / IMAGES ROTATE 90deg ON HOVER
+   ========================================================================== */
+.main-button:hover .button-icon,
+.main-button:hover img.button-icon,
+.main-button:hover svg.button-icon,
+.button-item .main-button:hover .button-icon,
+.footer-action-btn-wrap .main-button:hover .button-icon,
+a.main-button:hover .button-icon,
+button.main-button:hover .button-icon {
+  transform: rotate(90deg) !important;
+}
+

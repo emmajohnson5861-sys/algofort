@@ -40,33 +40,21 @@
 
 .footer-brand-link {
   text-decoration: none;
-  display: inline-block;
-}
-
-.footer-brand-title {
-  font-family: 'Clash Display', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  color: var(--dark-shade--black, #0d0d0d);
   display: inline-flex;
-  align-items: flex-start;
-  gap: 4px;
-  line-height: 1;
-  transition: opacity 0.25s ease;
+  align-items: center;
 }
 
-.footer-brand-title:hover {
-  opacity: 0.85;
+.footer-brand-logo {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.footer-brand-title sup {
-  font-size: 0.45em;
-  top: -0.6em;
-  position: relative;
-  font-weight: 700;
-  color: #f47a1f; /* Algofort brand orange */
+.footer-brand-logo:hover {
+  opacity: 0.82;
+  transform: translateY(-1px);
 }
 
 /* ==========================================================================
@@ -119,6 +107,7 @@
   0% {
     transform: translate3d(0%, 0, 0);
   }
+
   100% {
     transform: translate3d(-100%, 0, 0);
   }
@@ -146,7 +135,7 @@
   align-items: stretch;
 }
 
-.footer-main-grid > * {
+.footer-main-grid>* {
   min-width: 0;
   max-width: 100%;
 }
@@ -176,7 +165,7 @@
   justify-content: center;
   text-decoration: none;
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-              background-color 0.3s ease;
+    background-color 0.3s ease;
 }
 
 .footer-social-btn:hover {
@@ -195,13 +184,14 @@
   font-family: var(--_font-family---secondary-font, 'Noto Sans', sans-serif);
   font-size: 0.9375rem;
   line-height: 1.65;
-  color: #555555;
+  color: #555555 !important;
   margin-bottom: 26px;
   font-style: normal;
 }
 
 .footer-address p {
   margin: 0;
+  color: #555555;
 }
 
 /* Contact Links (Phone & Email) */
@@ -348,7 +338,8 @@
 }
 
 .footer-rollup-text._2 {
-  color: #f47a1f; /* Signature brand orange roll-in */
+  color: #f47a1f;
+  /* Signature brand orange roll-in */
 }
 
 /* Hover on parent triggers exact 100% upward translation identical to main-button */
@@ -415,7 +406,7 @@
 }
 
 .main-button:hover .button-icon {
-  transform: rotate(45deg);
+  transform: rotate(90deg) !important;
 }
 
 /* Middle Columns Wrapper */
@@ -499,11 +490,15 @@
 
 @media screen and (max-width: 767px) {
   .footer-section {
-    padding-top: 70px;
+    padding-top: 40px;
   }
 
   .footer-top-brand {
     margin-bottom: 32px;
+  }
+
+  .footer-brand-logo {
+    max-width: 170px;
   }
 
   .footer-subtitle-marquee {

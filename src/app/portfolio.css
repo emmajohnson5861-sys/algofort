@@ -73,6 +73,11 @@
 }
 
 @media screen and (max-width: 767px) {
+    .algo-portfolio__container {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
     .algo-portfolio__desc {
         font-size: 22px;
         line-height: 135%;
