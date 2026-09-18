@@ -36,10 +36,7 @@ export default function Navbar() {
                                     <div className="nav-menu-dot"></div>
                                     <div className="nav-text">Process</div>
                                 </a>
-                                <a className="nav-menu-link w-inline-block" href="#why-us">
-                                    <div className="nav-menu-dot"></div>
-                                    <div className="nav-text">Why Us</div>
-                                </a>
+                            
                                 <div className="button-wrap nav-tablet">
                                     <a className="nav-button w-inline-block" href="#contact">
                                         <div className="nav-button-dot"></div>

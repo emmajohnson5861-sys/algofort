@@ -1,9 +1,11 @@
 @import "./algofort.css";
 @import "./portfolio.css";
 @import "./blog.css";
+@import "./cta.css";
+@import "./footer.css";
 
 .hero-big-text {
-  font-size: 14rem;
+  font-size: 14.7rem;
 }
 
 @media screen and (max-width: 1400px) {

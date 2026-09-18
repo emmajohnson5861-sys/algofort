@@ -10,6 +10,7 @@ import WhyUs from "@/components/WhyUs";
 import Testimonials from "@/components/Testimonials";
 import Blog from "@/components/Blog";
 import CTA from "@/components/CTA";
+import Footer from "@/components/Footer";
 
 declare global {
   interface Window {
@@ -34,6 +35,7 @@ export default function Home() {
         <Blog />
         <CTA />
       </main>
+      <Footer />
     </div>
   );
 }
